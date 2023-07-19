@@ -142,9 +142,9 @@ jobs:
       - name: 'Docker: login'
         run: docker login -u $DOCKER_REGISTRY_USER -p $DOCKER_REGISTRY_PASSWORD $DOCKER_REGISTRY
       - name: 'Docker: build'
-        run: docker build -t $DOCKER_REGISTRY/$APP_NAME:$VERSION .
+        run: docker build -t $DOCKER_REGISTRY/microtema/$APP_NAME:$VERSION .
       - name: 'Docker: push'
-        run: docker push $DOCKER_REGISTRY/$APP_NAME:$VERSION
+        run: docker push $DOCKER_REGISTRY/microtema/$APP_NAME:$VERSION
   promote:
     name: 'Promote'
     runs-on: [ ubuntu-latest ]
